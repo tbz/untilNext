@@ -4,7 +4,7 @@ function untilNext(hour, minute) {
 		nowMinute = now.getMinutes(),
 		next;
 
-	if (nowHour == hour && nowMinute == minute) {
+	if (nowHour === hour && nowMinute === minute) {
 		return 0;
 	}
 
@@ -13,7 +13,7 @@ function untilNext(hour, minute) {
 	next.setMinutes(minute);
 
 	if (next < now) {
-		next.setTime( next.getTime() + 86400000 );
+		next.setTime(next.getTime() + 86400000);
 	}
 
 	return Math.floor(Math.round((next - now) / 1000) / 60);
