@@ -1,9 +1,10 @@
 (function ($) {
 
 $.fn.untilNext = function (hours, minutes, callback) {
+	var collection = this;
 	(function () {
 		var minutesLeft = untilNext(hours, minutes);
-		callback.call(this, minutesLeft, minutesLeft === 0);
+		callback.call(collection, minutesLeft, minutesLeft === 0);
 		window.setTimeout(arguments.callee, 500);
 	})();
 };
