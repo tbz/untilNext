@@ -16,5 +16,5 @@ function untilNext(hours, minutes) {
 		next.setTime(next.getTime() + 86400000);
 	}
 
-	return Math.floor(Math.round((next - now) / 1000) / 60);
+	return Math.round((next - now) / 1000 / 60);
 }
