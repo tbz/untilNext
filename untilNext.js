@@ -1,16 +1,16 @@
-function untilNext(hour, minute) {
+function untilNext(hours, minutes) {
 	var now = new Date(),
-		nowHour = now.getHours(),
-		nowMinute = now.getMinutes(),
+		nowHours = now.getHours(),
+		nowMinutes = now.getMinutes(),
 		next;
 
-	if (nowHour === hour && nowMinute === minute) {
+	if (nowHours === hours && nowMinutes === minutes) {
 		return 0;
 	}
 
 	next = new Date();
-	next.setHours(hour);
-	next.setMinutes(minute);
+	next.setHours(hours);
+	next.setMinutes(minutes);
 
 	if (next < now) {
 		next.setTime(next.getTime() + 86400000);
